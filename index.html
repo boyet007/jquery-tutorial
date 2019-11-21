@@ -31,6 +31,32 @@
             //pilih kelas index ke 2
             $('.boxes:eq(2)').css('color', 'yellow');
 
+            // ---------- event -------
+            $('h1').click(function() {
+                $('h1').css('color', 'red'); //h1 diklik berubah jadi merah
+            });
+
+            $('h1').mouseenter(function() {
+                $('h1').css('color', 'yellow'); //h1 di kenai mouse berubah kuning
+            });
+
+            $('h1').mouseleave(function() {
+                $('h1').css('color', 'green'); //h1 ditinggal mouse berubah warna hijau
+            });
+
+            $('.boxes').mouseenter(function() {
+                //semua kelas diboxes menjadi item
+                $('.boxes').css('color', 'black'); 
+            });
+
+            $('.boxes').mouseenter(function() {
+                $(this).css('color', 'black'); 
+                //this mengacu pada spesifik kelas yang di enter mousenya
+                //hanya kelas yang di mouse enter berubah warna
+                //yang lain tidak
+
+            })
+
         })
     </script>
 </body>
