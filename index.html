@@ -7,7 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>test</h1>
+    
+    <h1>belajar jquery !!!</h1>
+    <id id="box1">Box 1</id>
+    <div class="boxes">Baris pertama</div>
+    <div class="boxes">Baris kedua</div>
+    <div class="boxes">Baris ketiga</div>
+    <div class="boxes">Baris keempat</div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        //memastikan file sudah diload dengan sempurna
+        $(document).ready(function() {
+            $('h1').css('color', 'blue');
+            $('#box1').css('color', 'yellow');
+            //semua kelas berubah warna merah muda
+            $('.boxes').css('color', 'magenta');
+
+            //pilih kelas pertama 
+            $('.boxes:first').css('color', 'red');
+            $('.boxes:last').css('color', 'brown');
+
+            //pilih kelas index ke 2
+            $('.boxes:eq(2)').css('color', 'yellow');
+
+        })
+    </script>
 </body>
 </html>
