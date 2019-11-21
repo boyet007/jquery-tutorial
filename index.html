@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    #box-wrapped{ width: 100px; height: 100px; background:grey; }</style>
 </head>
 <body>
     
     <h1>belajar jquery !!!</h1>
     <id id="box1">Box 1</id>
-    <div class="box-wrapped">
+    <div id="box-wrapped">
         <div class="boxes">Baris pertama</div>
         <div class="boxes">Baris kedua</div>
         <div class="boxes">Baris ketiga</div>
@@ -68,14 +70,35 @@
             //set = text
             //get = val
             $('form').submit(function() {
+                //mencegah sifat html (load ketika submit)
+                event.preventDefault();
                 //val = value
                 var tulisan = $('#inputText').val();
                 //text hanya tulisan saja
-                //html lengkap dengan tag nya html
                 $('h1').text(tulisan);
+                //html lengkap dengan tag nya html
+                
+                //append memunculkan element dibagian paling bawah
+                //$('#box-wrapped').append('<div>Halo</div>');
+                
+                //prepend memunculkan element dibagian paling bawah
+                // $('#box-wrapped').prepend('<div>Halo</div>');
 
-                //mencegah sifat html (load ketika submit)
-                event.preventDefault();
+                //after memunculkan diluar setelah element  dibagian bawah
+                //$('#box-wrapped').after('<div>Halo</div>');
+
+                //before memunculkan diluar setelah element  dibagian atas
+                //$('#box-wrapped').before('<div>Halo</div>');
+
+                //remove -> hapus semua berikut kelas yang dipanggil
+                $('#box-wrapped').remove();
+
+                //remove -> hapus element didalam saja
+                //$('#box-wrapped').empty();
+
+
+
+
             });
 
             
@@ -86,6 +109,8 @@
     //         <div class="boxes" style="color: yellow;">Baris ketiga</div>
     //         <div class="boxes" style="color: brown;">Baris keempat</div>
 
+                // menambahkan dan menghapus
+                //append prepend | after before
 
 
 
