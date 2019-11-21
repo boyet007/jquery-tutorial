@@ -10,10 +10,18 @@
     
     <h1>belajar jquery !!!</h1>
     <id id="box1">Box 1</id>
-    <div class="boxes">Baris pertama</div>
-    <div class="boxes">Baris kedua</div>
-    <div class="boxes">Baris ketiga</div>
-    <div class="boxes">Baris keempat</div>
+    <div class="box-wrapped">
+        <div class="boxes">Baris pertama</div>
+        <div class="boxes">Baris kedua</div>
+        <div class="boxes">Baris ketiga</div>
+        <div class="boxes">Baris keempat</div>
+    </div>
+
+
+    <form>
+        <input type="text"  id="inputText">
+        <input type="submit" value="submit">
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
@@ -54,8 +62,32 @@
                 //this mengacu pada spesifik kelas yang di enter mousenya
                 //hanya kelas yang di mouse enter berubah warna
                 //yang lain tidak
-
             })
+
+            //---- get dan set nilai -----
+            //set = text
+            //get = val
+            $('form').submit(function() {
+                //val = value
+                var tulisan = $('#inputText').val();
+                //text hanya tulisan saja
+                //html lengkap dengan tag nya html
+                $('h1').text(tulisan);
+
+                //mencegah sifat html (load ketika submit)
+                event.preventDefault();
+            });
+
+            
+//             $('.box-wrapped').html() //dibawah hasilnya semua bagian ditampilkan
+// "
+    //         <div class="boxes" style="color: red;">Baris pertama</div>
+    //         <div class="boxes" style="color: magenta;">Baris kedua</div>
+    //         <div class="boxes" style="color: yellow;">Baris ketiga</div>
+    //         <div class="boxes" style="color: brown;">Baris keempat</div>
+
+
+
 
         })
     </script>
