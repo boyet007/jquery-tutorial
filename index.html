@@ -24,32 +24,55 @@
     
     <h1>belajar jquery !!!</h1>
 
-    <ul>
-        <li>Belajar!</li>
-        <li>html</li>
-        <li id="css">css</li>
-        <li>jquery</li>
-        <li>database</li>
-        <li>php</li>
-        <li>vnb</li>
-        <li id="pi">piton</li>
-    </ul>
+    <div>
+        <div id="tester">
+            Div pertama banget
+        </div>
+        <div>
+            div kedua banget
+            <ul>
+                <li>list pertama</li>
+            </ul>
+            <ul>
+                <p>paragraph atas</p>
+                <li>Belajar!</li>
+                <li>html</li>
+                <li id="css">css</li>
+                <li>jquery</li>
+                <li>database</li>
+                <li>php</li>
+                <li>vnb</li>
+                <li id="pi">piton</li>
+                <div>
+                    <p>paragraph dalam</p>
+                    <span>span dalam</span>
+                </div>
+                <span>span luar</span>
+            </ul>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
     $(document).ready(function() {
-        //sibling semua yang ada 1 parent ama dia kecuali yang id css
-        //$('#css').siblings().css('color', 'magenta');
+        //semua anak ul berwarna magenta
+        //$('ul').children().css('color', 'magenta');
 
-        //mmilih 1 query setelah css
-        //$('#css').next().css('color', 'blue');
+        //hanya spaan luar  yang berwarna
+        //$('ul').children('span').css('color', 'magenta');
 
-        //milih semua query setelah css ngasih tau berenti sampe id di pi
-        $('#css').nextUntil('#pi').css('color', 'yellow');
+        //die melihat semua anaknya dan cucunye
+        //$('ul').find('span').css('color', 'magenta');
 
-        //previous sebelumnya
+        //si parent (ul) nya kuning (hanya 1 parent diatas)
+        //$('#css').parent().css('background', 'yellow');
 
+                //semua parent
+                //$('#css').parents().css('border', '2px solid magenta');
 
+                //efek border pada ul aja    
+                // $('#css').parents('ul').css('border', '2px solid magenta');
 
+                $('#css').parentsUntil('#tester').css('background', 'black');
 
     });
     </script>
