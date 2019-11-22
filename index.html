@@ -30,25 +30,26 @@
         <li id="css">css</li>
         <li>jquery</li>
         <li>database</li>
+        <li>php</li>
+        <li>vnb</li>
+        <li id="pi">piton</li>
     </ul>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
     $(document).ready(function() {
-        //traversing
-        //li pertama
-        $('li').first().css('color', 'blue');
+        //sibling semua yang ada 1 parent ama dia kecuali yang id css
+        //$('#css').siblings().css('color', 'magenta');
 
-        // eq -> index keberapa
-        $('li').eq(1).css('color', 'magenta');
+        //mmilih 1 query setelah css
+        //$('#css').next().css('color', 'blue');
 
-        //li terakhir
-        $('li').last().css('color', 'yellow');
+        //milih semua query setelah css ngasih tau berenti sampe id di pi
+        $('#css').nextUntil('#pi').css('color', 'yellow');
 
-        //li yang css aja
-        $('li').filter('#css').css('fontSize', '25px');
+        //previous sebelumnya
 
-        //lawan filter
-        $('li').not('#css').css('background', 'magenta');
+
+
 
     });
     </script>
