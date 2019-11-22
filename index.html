@@ -23,93 +23,33 @@
 <body>
     
     <h1>belajar jquery !!!</h1>
-  
-    <div id="box1">Box 1</div>
-    <br />
-    <div>
-    <button id="btn1">Show</button>
-    <button id="btn2">Hide</button>
-    <button id="btn3">Toggle</button>
-    <button id="btn4">Stop</button>
-    </div>
 
-
-
-
+    <ul>
+        <li>Belajar!</li>
+        <li>html</li>
+        <li id="css">css</li>
+        <li>jquery</li>
+        <li>database</li>
+    </ul>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
     $(document).ready(function() {
-        //hide - show - toggle
-        // $('#btn1').click(function() {
-        //     $('#box1').show();
-        // });
+        //traversing
+        //li pertama
+        $('li').first().css('color', 'blue');
 
-        // $('#btn2').click(function() {
-        //     $('#box1').hide();
-        // });
+        // eq -> index keberapa
+        $('li').eq(1).css('color', 'magenta');
 
-        //  $('#btn3').click(function() {
-        //      $('#box1').toggle();
-        //  });
+        //li terakhir
+        $('li').last().css('color', 'yellow');
 
+        //li yang css aja
+        $('li').filter('#css').css('fontSize', '25px');
 
-        // //fadein fadeout(time, opacity) fadeToggle
-        // $('#btn1').click(function() {
-        //     //2000 artinya 2 detik
-        //     $('#box1').fadeIn(2000);
-        // });
+        //lawan filter
+        $('li').not('#css').css('background', 'magenta');
 
-        // $('#btn2').click(function() {
-        //     $('#box1').fadeOut(2000);
-        // });
-        //     //opacity seberapa transparan hilangnya kalo 0 hilang semua, 1 ga hilang
-        //  $('#btn3').click(function() {
-        //      $('#box1').fadeTo(2000, 0);
-         //});
-
-         //slideUp slideDown slideToggle
-        //  $('#btn1').click(function() {
-        //     $('#box1').slideDown(2000);
-        // });
-
-        // $('#btn2').click(function() {
-        //     //menghilangkan dengan membungkus keatas
-        //     $('#box1').slideUp(2000);
-        // });
-        //  $('#btn3').click(function() {
-        //      $('#box1').slideToggle();
-        //  });
-
-        //slideUp slideDown slideToggle
-
-         //callback -> fungsi yang dipanggil setelah fungsi sebelumnya selesai
-         $('#btn1').click(function() {
-
-             //callback alert muncul setelah 2 detik
-            $('#box1').slideDown(2000, function() {
-                alert('selesai');
-            });
-        });
-
-        $('#btn2').click(function() {
-            //menghilangkan dengan membungkus keatas
-            $('#box1').slideUp(2000);
-        });
-         $('#btn3').click(function() {
-             $('#box1').slideToggle();
-         });
-        //  $('#btn4').click(function() {
-        //      //stop animasi ketika sedang bekerja
-        //      $('#box1').stop();
-        //  });
-
-
-         //chaining -> menggabungkan bebeerapa metoda menjadi 1 baris
-        $('#btn4').click(function() {
-            $('#box1').slideUp(2000)
-                .fadeIn(2000)
-                .fadeTo(2000, 0.5);
-        });
     });
     </script>
 </body>
