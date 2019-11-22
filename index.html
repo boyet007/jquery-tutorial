@@ -6,7 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    #box-wrapped{ width: 100px; height: 100px; background:grey; }</style>
+        #box-wrapped{ width: 100px; height: 100px; background:grey; }
+        .change{
+            background: Yellow;
+            color: blue;
+        }
+    
+    </style>
 </head>
 <body>
     
@@ -42,22 +48,34 @@
             $('.boxes:eq(2)').css('color', 'yellow');
 
             // ---------- event -------
-            $('h1').click(function() {
-                $('h1').css('color', 'red'); //h1 diklik berubah jadi merah
-            });
+             $('h1').click(function() {
+            //     $('h1').css({
+            //         'color' : 'red',
+            //         'fontSize' : '20px',
+            //         'backgroundColor' : 'yellow'
+            //     }); //h1 diklik berubah jadi merah
+            // });
 
-            $('h1').mouseenter(function() {
-                $('h1').css('color', 'yellow'); //h1 di kenai mouse berubah kuning
-            });
+                
+                //add class ketika di click
+                // $('h1').addClass('change');
 
-            $('h1').mouseleave(function() {
-                $('h1').css('color', 'green'); //h1 ditinggal mouse berubah warna hijau
-            });
+                //toggle class otomatis ketika ada kelas dihapus, ketka ga ada ditambahkan
+                $('h1').toggleClass('change');
+             });
 
-            $('.boxes').mouseenter(function() {
+            //$('h1').mouseenter(function() {
+               // $('h1').css('color', 'yellow'); //h1 di kenai mouse berubah kuning
+            //});
+
+            //$('h1').mouseleave(function() {
+                //$('h1').css('color', 'green'); //h1 ditinggal mouse berubah warna hijau
+            //});
+
+            //$('.boxes').mouseenter(function() {
                 //semua kelas diboxes menjadi item
-                $('.boxes').css('color', 'black'); 
-            });
+               // $('.boxes').css('color', 'black'); 
+            //});
 
             $('.boxes').mouseenter(function() {
                 $(this).css('color', 'black'); 
