@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        #box-wrapped{ width: 100px; height: 100px; background:grey; }
-        .change{
-            background: Yellow;
-            color: blue;
+        #box-wrapped{
+            background: grey;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 5px solid black;
         }
-    
+
+        .change{
+            background: yellow;
+            color:red;
+        }    
     </style>
 </head>
 <body>
@@ -33,106 +39,16 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
-        //memastikan file sudah diload dengan sempurna
-        $(document).ready(function() {
-            $('h1').css('color', 'blue');
-            $('#box1').css('color', 'yellow');
-            //semua kelas berubah warna merah muda
-            $('.boxes').css('color', 'magenta');
+    $(document).ready(function() {
+        //var nilai = $('#box-wrapped').height();
 
-            //pilih kelas pertama 
-            $('.boxes:first').css('color', 'red');
-            $('.boxes:last').css('color', 'brown');
+        //bukan hanya lebar konten tapi ditambahkan padding juga
+        // var nilai = $('#box-wrapped').innerWidth();
 
-            //pilih kelas index ke 2
-            $('.boxes:eq(2)').css('color', 'yellow');
-
-            // ---------- event -------
-             $('h1').click(function() {
-            //     $('h1').css({
-            //         'color' : 'red',
-            //         'fontSize' : '20px',
-            //         'backgroundColor' : 'yellow'
-            //     }); //h1 diklik berubah jadi merah
-            // });
-
-                
-                //add class ketika di click
-                // $('h1').addClass('change');
-
-                //toggle class otomatis ketika ada kelas dihapus, ketka ga ada ditambahkan
-                $('h1').toggleClass('change');
-             });
-
-            //$('h1').mouseenter(function() {
-               // $('h1').css('color', 'yellow'); //h1 di kenai mouse berubah kuning
-            //});
-
-            //$('h1').mouseleave(function() {
-                //$('h1').css('color', 'green'); //h1 ditinggal mouse berubah warna hijau
-            //});
-
-            //$('.boxes').mouseenter(function() {
-                //semua kelas diboxes menjadi item
-               // $('.boxes').css('color', 'black'); 
-            //});
-
-            $('.boxes').mouseenter(function() {
-                $(this).css('color', 'black'); 
-                //this mengacu pada spesifik kelas yang di enter mousenya
-                //hanya kelas yang di mouse enter berubah warna
-                //yang lain tidak
-            })
-
-            //---- get dan set nilai -----
-            //set = text
-            //get = val
-            $('form').submit(function() {
-                //mencegah sifat html (load ketika submit)
-                event.preventDefault();
-                //val = value
-                var tulisan = $('#inputText').val();
-                //text hanya tulisan saja
-                $('h1').text(tulisan);
-                //html lengkap dengan tag nya html
-                
-                //append memunculkan element dibagian paling bawah
-                //$('#box-wrapped').append('<div>Halo</div>');
-                
-                //prepend memunculkan element dibagian paling bawah
-                // $('#box-wrapped').prepend('<div>Halo</div>');
-
-                //after memunculkan diluar setelah element  dibagian bawah
-                //$('#box-wrapped').after('<div>Halo</div>');
-
-                //before memunculkan diluar setelah element  dibagian atas
-                //$('#box-wrapped').before('<div>Halo</div>');
-
-                //remove -> hapus semua berikut kelas yang dipanggil
-                $('#box-wrapped').remove();
-
-                //remove -> hapus element didalam saja
-                //$('#box-wrapped').empty();
-
-
-
-
-            });
-
-            
-//             $('.box-wrapped').html() //dibawah hasilnya semua bagian ditampilkan
-// "
-    //         <div class="boxes" style="color: red;">Baris pertama</div>
-    //         <div class="boxes" style="color: magenta;">Baris kedua</div>
-    //         <div class="boxes" style="color: yellow;">Baris ketiga</div>
-    //         <div class="boxes" style="color: brown;">Baris keempat</div>
-
-                // menambahkan dan menghapus
-                //append prepend | after before
-
-
-
-        })
+        var nilai = $('#box-wrapped').outerWidth(true);
+        console.log(nilai);
+        $('#box1').text(nilai);
+    });
     </script>
 </body>
 </html>
