@@ -30,6 +30,7 @@
     <button id="btn1">Show</button>
     <button id="btn2">Hide</button>
     <button id="btn3">Toggle</button>
+    <button id="btn4">Stop</button>
     </div>
 
 
@@ -67,8 +68,27 @@
          //});
 
          //slideUp slideDown slideToggle
+        //  $('#btn1').click(function() {
+        //     $('#box1').slideDown(2000);
+        // });
+
+        // $('#btn2').click(function() {
+        //     //menghilangkan dengan membungkus keatas
+        //     $('#box1').slideUp(2000);
+        // });
+        //  $('#btn3').click(function() {
+        //      $('#box1').slideToggle();
+        //  });
+
+        //slideUp slideDown slideToggle
+
+         //callback -> fungsi yang dipanggil setelah fungsi sebelumnya selesai
          $('#btn1').click(function() {
-            $('#box1').slideDown(2000);
+
+             //callback alert muncul setelah 2 detik
+            $('#box1').slideDown(2000, function() {
+                alert('selesai');
+            });
         });
 
         $('#btn2').click(function() {
@@ -78,6 +98,18 @@
          $('#btn3').click(function() {
              $('#box1').slideToggle();
          });
+        //  $('#btn4').click(function() {
+        //      //stop animasi ketika sedang bekerja
+        //      $('#box1').stop();
+        //  });
+
+
+         //chaining -> menggabungkan bebeerapa metoda menjadi 1 baris
+        $('#btn4').click(function() {
+            $('#box1').slideUp(2000)
+                .fadeIn(2000)
+                .fadeTo(2000, 0.5);
+        });
     });
     </script>
 </body>
